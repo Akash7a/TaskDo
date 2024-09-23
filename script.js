@@ -17,6 +17,7 @@ const createTasks = () => {
         createdTaskInput.type = "text";
         createdTaskInput.value = task.title;
         createdTaskInput.readOnly = true;
+        
 
         if (task.completed) {
             createdTaskInput.classList.add("completed");
@@ -24,9 +25,12 @@ const createTasks = () => {
 
         const updateTaskBtn = document.createElement("button");
         updateTaskBtn.textContent = "📝";
+        updateTaskBtn.classList.add("updateBtn");
         updateTaskBtn.addEventListener("click", () => {
             if (createdTaskInput.readOnly) {
                 createdTaskInput.readOnly = false;
+                createdTaskInput.focus();
+                createdTaskInput.select();
                 updateTaskBtn.textContent = "✅";
             } else {
                 createdTaskInput.readOnly = true;
@@ -40,6 +44,7 @@ const createTasks = () => {
 
         const removeTaskBtn = document.createElement("button");
         removeTaskBtn.textContent = "❌";
+        removeTaskBtn.classList.add("removeBtn");
         removeTaskBtn.addEventListener("click", () => removeTask(task.id));
 
         tasks.appendChild(checkBox);

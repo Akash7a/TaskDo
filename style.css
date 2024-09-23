@@ -70,7 +70,7 @@ form button:hover {
 
 .tasks input[type="text"] {
     width: 75%;
-    padding: 7px 0;
+    padding: 8px 0;
     outline: none;
     font-size: 18px;
     font-weight: bold;
@@ -86,4 +86,7 @@ form button:hover {
 .completed {
     text-decoration: line-through;
     color: blue;
+}
+.removeBtn,.updateBtn{
+    font-size: 30px;
 }
